@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+#app {
+  position: relative;
+}
+
+.background {
+  float: left;
+  width: 200px;
+  height: 200px;
+  background: url(https://source.unsplash.com/random/200x200) no-repeat center center #fff;
+  opacity: 0;
+}
+
+@keyframes flipInY {
+  from {
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    opacity: 0;
+  }
+
+  to {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 0deg);
+    transform: perspective(400px);
+    opacity: 1;
+  }
+}
+
+.animated {
+  backface-visibility: visible !important;
+  animation-name: flipInY;
+}
