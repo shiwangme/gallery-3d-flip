@@ -1,5 +1,5 @@
 root: true
-extends: shiwangme
+extends: willin
 settings:
   import/core-modules:
     - '@hapi/joi'
